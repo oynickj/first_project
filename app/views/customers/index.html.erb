@@ -1,0 +1,7 @@
+<h1>Customers</h1>
+<% @customers.each do |customer| %>
+  <%= render partial: "customer", :locals => {:customer => customer} %>
+<% end %>
+
+<h1> Collection </h1>
+<%= render partial: "customer", :collection => @customers %>

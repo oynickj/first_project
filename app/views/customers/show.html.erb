@@ -1,0 +1,5 @@
+<h1> Hola, <%= @customer.name %>!!!!!! </h1>
+<% session %>
+<%= render partial: 'customer', locals: {:customer => @customer } %>
+
+<%= link_to('Get a Dilla!', '/orderdilla') %>

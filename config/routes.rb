@@ -1,4 +1,16 @@
 Getadilla::Application.routes.draw do
+
+  root to: "welcome#index"
+  get '/signup' => "customers#new"
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+
+  get '/orderdilla' => 'dillas#new'
+
+  resources :customers
+  resources :dillas
+  resources :ingredients
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
