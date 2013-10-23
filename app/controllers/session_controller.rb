@@ -1,6 +1,7 @@
 class SessionController < ApplicationController
   def new
   end
+
   def create
     email = params[:email]
     password = params[:password]
@@ -13,4 +14,24 @@ class SessionController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    def signout
+      self.current_user = nil
+      redirect_to root
+    end
+  end
+
+#TODO Move these to their own module
+
+  def current_customer=(customer)
+    @current_customer = customer
+  end
+
+
+
+
+
 end
+
+#TODO session destroy

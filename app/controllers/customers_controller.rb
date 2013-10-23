@@ -22,6 +22,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+#TODO what is this authenticate thing
   def authenticate
   end
 end

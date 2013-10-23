@@ -8,9 +8,11 @@ class DillasController < ApplicationController
   end
 
   def create
-    dilla = params[:dilla]
-    Dilla.create(dilla)
+    dilla = Dilla.create(params[:dilla])
+    @customer.dillas << dilla
     #Dilla.create(params[:dilla])
     redirect_to('/dillas')
+
+    #TODO redirect to customer's order history page
   end
 end

@@ -1,0 +1,25 @@
+<h1>Order a Dilla</h1>
+
+<%= form_for(@dilla) do |f| %>
+<select name="dilla[name]">
+  <option value="Dilla from Manila">Dilla from Manila</option>
+  <option value="Godzdilla">Godzdilla</option>
+  <option value="Ghostface Dilla">Ghostface Dilla</option>
+  <option value="All Dilla No Filla">All Dilla No Filla</option>
+</select>
+<%= f.submit "Get That Dilla" %>
+<% end %>
+
+
+<h3> Dilla from Manila </h3>
+<p> Asian-inspired sriracha-packed dillamonster </p>
+
+
+<h3> Godzdilla </h3>
+<p> A dilla of mythic proportions, known to cause citizens of global metropolises (sp?) to flee in fear </p>
+
+<h3> Ghostface Dilla </h3>
+<p> The cheesiest, most delicious member of the Wu-Tang Clan </p>
+
+<h3> All Dilla No Filla </h3>
+<p> The most glorious dilla of all time </p>

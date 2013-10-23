@@ -4,8 +4,12 @@ Getadilla::Application.routes.draw do
   get '/signup' => "customers#new"
   get '/login' => 'session#new'
   post '/login' => 'session#create'
+  delete '/signout' => 'session#destroy'
 
   get '/orderdilla' => 'dillas#new'
+  get '/orderhistory' => 'dillas#index'
+
+  #TODO add logout
 
   resources :customers
   resources :dillas

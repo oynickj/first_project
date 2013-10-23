@@ -11,6 +11,7 @@ class IngredientsController < ApplicationController
     ingredient = params[:ingredient]
     Ingredient.create(ingredient)
     #Ingredient.create(params[:ingredient])
-    redirect_to('/ingredients')
+    #OPTIMIZE use named routes
+    redirect_to(ingredients_path)
   end
 end

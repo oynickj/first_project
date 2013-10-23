@@ -10,7 +10,7 @@
 #
 
 class Dilla < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :customer_id
   belongs_to :customer
   has_and_belongs_to_many :ingredients
 end
