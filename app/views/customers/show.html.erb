@@ -1,4 +1,6 @@
-<h1> Hola, <%= @customer.name %>!!!!!! </h1>
+<h1> Hola, <%= @customer.name.capitalize %>!!!!!! </h1>
 <%= render partial: 'customer', locals: {:customer => @customer } %>
 
-<%= link_to('Get a Dilla!', orderdilla_path) %>
+<div><%= link_to('Get a Dilla!', orderdilla_path) %></div>
+
+<div><%= link_to('View Order History', dillas_path) %></div>

@@ -6,15 +6,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%#TODO add current logged in user and also show log out link %>
-<%= yield %>
 
+<header>
+<% if session[:customer_id] %>
+<%= link_to "Sign out", signout_path, method: "delete" %>
+<% end %>
+
+<% if flash[:notice] -%><div><%= flash[:notice] %></div><% end %>
+</header>
+
+<body>
+<%= yield %>
 </body>
 
-<footer>
-<%= link_to "Sign out", signout_path, method: "delete" %>
-</footer>
 </html>
 
 

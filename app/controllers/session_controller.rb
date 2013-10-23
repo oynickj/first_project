@@ -16,22 +16,9 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    def signout
-      self.current_user = nil
-      redirect_to root
-    end
+    session[:customer_id] = nil
+    flash[:notice] = "You have successfully logged out."
+    redirect_to root_path
   end
-
-#TODO Move these to their own module
-
-  def current_customer=(customer)
-    @current_customer = customer
-  end
-
-
-
-
 
 end
-
-#TODO session destroy

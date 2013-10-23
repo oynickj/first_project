@@ -7,12 +7,13 @@ Getadilla::Application.routes.draw do
   delete '/signout' => 'session#destroy'
 
   get '/orderdilla' => 'dillas#new'
-  get '/orderhistory' => 'dillas#index'
+  get '/orderhistory' => 'customers#show'
+  get '/orderconfirmation' => 'customers#confirmation'
 
   #TODO add logout
 
-  resources :customers
   resources :dillas
+  resources :customers
   resources :ingredients
 
   # The priority is based upon order of creation:

@@ -1,3 +1,24 @@
 <h1>Order History</h1>
 
-<p> <%= @dillas %> </p>
+<% if @dillas.count < 3 %>
+  <p> You've only ordered <%= @dillas.count %> dillas!?!?! HOW ARE YOU EVEN NAVIGATING THE INTERWEBS, LET'S GET YOU <%= link_to('SOME MORE DILLAS, STAT!', orderdilla_path)%> </p>
+  <% elsif @dillas.count < 10 %>
+  <p> You have a few dillas under your belt, but once you've ordered 10 dillas you'll be "the rilla dilla". <%= link_to('Did you forget one for your friend?', orderdilla_path)%> </p>
+  <% else %>
+  <p> You are an official killa of dillas. <%= link_to('KEEP AT IT, YOU DILLA PARTY MACHINE.', orderdilla_path)%></p>
+<% end %>
+
+<p> Here's a look at the dillas you've ordered in the past </p>
+<% @dillas.each do |dilla| %>
+<div>
+ <%= dilla.name %>
+ <%= dilla.created_at %>
+</div>
+<% end %>
+
+<br>
+
+<div><%= link_to('Back to Order Page', orderdilla_path) %></div>
+
+
+

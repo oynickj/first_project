@@ -1,6 +1,7 @@
 class DillasController < ApplicationController
   def index
-    @dillas = Dilla.all
+    @dillas = Dilla.where({customer_id: @customer.id}).all
+
   end
 
   def new
@@ -11,8 +12,7 @@ class DillasController < ApplicationController
     dilla = Dilla.create(params[:dilla])
     @customer.dillas << dilla
     #Dilla.create(params[:dilla])
-    redirect_to('/dillas')
-
-    #TODO redirect to customer's order history page
+    redirect_to('/orderconfirmation')
+    #TODO redirect to order confirmation page, which has links to order history and order more dillas
   end
 end
