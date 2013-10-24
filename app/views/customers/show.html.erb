@@ -1,9 +1,8 @@
-<title> Hola, <%= @customer.name.capitalize %>!!!!!! </title>
+<h1> Hola, <%= @customer.name.capitalize %>!!!!!! </h1>
 <%= render partial: 'customer', locals: {:customer => @customer } %>
 
 <div><strong><%= link_to('Get a Dilla!', orderdilla_path) %></strong></div>
 
 <div><%= link_to('View Order History', dillas_path) %></div>
 
-<div><%= link_to('Update Your Account Information', edit_customer_path) %></div>
 

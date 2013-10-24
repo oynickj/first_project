@@ -23,8 +23,11 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  def update
+  def edit
     @customer = Customer.find(params[:id])
+  end
+
+  def update
     if @customer.update_attributes(params[:customer])
       redirect_to(@customer)
     else

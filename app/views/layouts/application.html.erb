@@ -34,6 +34,7 @@
 <footer>
   <% if session[:customer_id] %>
     <%= link_to "Sign out", signout_path, method: "delete" %>
+    <%= link_to("Update Your Account Information", edit_customer_path(@customer)) %>
   <% end %>
 </footer>
 </body>
