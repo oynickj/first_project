@@ -10,6 +10,9 @@
 
   <link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
 
+  <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+
+
 </head>
 <body>
 <% if flash[:notice] -%><div><%= flash[:notice] %></div><% end %>
@@ -20,23 +23,20 @@
   }
   </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<header>
-  <div id="logo">
-    GETADILLA
+<div id="container">
+  <header>
+    <div id="logo">
+      GETADILLA
+    </div>
+
+  </header>
+
+  <div id="wrapper">
+    <%= yield %>
   </div>
 
-</header>
-
-<div id="wrapper">
-  <%= yield %>
+<%= render partial: 'layouts/footer' %>
 </div>
-
-<footer>
-  <% if session[:customer_id] %>
-    <%= link_to "Sign out", signout_path, method: "delete" %>
-    <%= link_to("Update Your Account Information", edit_customer_path(@customer)) %>
-  <% end %>
-</footer>
 </body>
 </html>
 

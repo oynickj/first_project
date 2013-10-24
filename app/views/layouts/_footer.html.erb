@@ -1,0 +1,7 @@
+  <footer>
+    <% if session[:customer_id] %>
+      <%= link_to "Sign out", signout_path, method: "delete" %>
+      <%= link_to("Update Your Account Information", edit_customer_path(@customer)) %>
+    <% end %>
+  &#169; 2013
+  </footer>
