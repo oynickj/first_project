@@ -63,16 +63,13 @@
         #logo {
             font-family: 'Frijole', cursive;
             font-size: 50px;
-            font-color: ;
-            display: inline;
             position: relative;
-            z-index: 1;
+            text-align: center;
 }
 
         .links {
-            padding: auto;
-            margin: auto;
-            border: auto;
+            margin: 40px 0px;
+            border: 0px 0px;
 }
 
         .menu {
@@ -81,8 +78,8 @@
             margin: auto;
 }
 
-        .menu {
-            padding: 30px 0px;
+        .menu_item {
+            padding: 10px 0px;
             border: 20px;
             margin: auto;
 }
