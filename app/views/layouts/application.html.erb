@@ -5,20 +5,38 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <meta name="google-translate-customization" content="8ee2914ddfd0efbb-e8d2cedfbc155bf3-g2a4e8419b2c32bd3-e"></meta>
+
+  <link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
+
 </head>
+<body>
+<% if flash[:notice] -%><div><%= flash[:notice] %></div><% end %>
+
+  <div id="google_translate_element"></div><script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+  }
+  </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <header>
-<% if session[:customer_id] %>
-<%= link_to "Sign out", signout_path, method: "delete" %>
-<% end %>
+  <div id="logo">
+    GETADILLA
+  </div>
 
-<% if flash[:notice] -%><div><%= flash[:notice] %></div><% end %>
 </header>
 
-<body>
-<%= yield %>
-</body>
+<div id="wrapper">
+  <%= yield %>
+</div>
 
+<footer>
+  <% if session[:customer_id] %>
+    <%= link_to "Sign out", signout_path, method: "delete" %>
+  <% end %>
+</footer>
+</body>
 </html>
 
 

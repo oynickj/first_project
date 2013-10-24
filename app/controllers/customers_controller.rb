@@ -23,6 +23,16 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update_attributes(params[:customer])
+      redirect_to(@customer)
+    else
+      render "edit"
+    end
+  end
+
+
 #TODO what is this authenticate thing
   def authenticate
   end
@@ -30,5 +40,6 @@ class CustomersController < ApplicationController
   def dillas
     @customer.dillas
   end
+
 
 end

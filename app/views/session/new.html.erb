@@ -1,4 +1,9 @@
 <h1>Login</h1>
+
+<em><% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %></em>
+
 <%= form_tag('/login') do %>
   <%= label_tag :email %>
   <%= text_field_tag :email %>

@@ -8,13 +8,15 @@
   <p> You are an official killa of dillas. <%= link_to('KEEP AT IT, YOU DILLA PARTY MACHINE.', orderdilla_path)%></p>
 <% end %>
 
-<p> Here's a look at the dillas you've ordered in the past </p>
+<p> Here's a look at the dillas you've ordered in the past: </p>
+<ul>
 <% @dillas.each do |dilla| %>
-<div>
- <%= dilla.name %>
- <%= dilla.created_at %>
-</div>
+<li>
+ <div><%= dilla.name %></div>
+ <div><%= dilla.created_at %></div>
+</li>
 <% end %>
+</ul>
 
 <br>
 
